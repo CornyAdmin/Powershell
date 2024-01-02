@@ -1,0 +1,20 @@
+w32tm /config /manualpeerlist:<IP>,0x8 /syncfromflags:manual /reliable:yes /update
+
+ w32tm /resync /rediscover /nowait
+ 
+Additional commands:
+w32tm /stripchart /computer:<IP> /dataonly
+W32tm /resync /computer:<IP> /nowait
+
+net stop w32time
+w32tm /unregister
+w32tm /register
+net start w32time
+w32tm /config /manualpeerlist:<IP>,0x8 /syncfromflags:MANUAL /reliable:YES /update
+w32tm /config /update
+net stop w32time
+net start w32time
+
+Get Details:
+w32tm /query /configuration
+w32tm /query /status

@@ -1,0 +1,4 @@
+w32tm.exe /config /syncfromflags:domhier
+w32tm.exe /config /update
+net stop w32time && net start w32time
+timedate.cpl
