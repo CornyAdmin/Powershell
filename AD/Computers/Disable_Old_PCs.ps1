@@ -104,15 +104,6 @@ foreach ($Disable in $Disables)
 				$disobj | Add-Member -type NoteProperty -name disableStatus -Value $Disabled
 				$disobj | Add-Member -type NoteProperty -name MoveStatus -Value $Moved
                 
-                #sorry Nic here , I need the DN :)
-                Try
-                {
-                   $disobj | Add-Member -NotePropertyName "DisabledDate" -NotePropertyValue $CurrentDate
-                   $disobj | Add-Member -NotePropertyName "DN" -NotePropertyValue $pcDN.DistinguishedName -ErrorAction SilentlyContinue
-                                   }
-                Catch{}
-                #Thanks for understanding - Nic! :) #
-
 				$err = $null
 				$errcontent = $null
 				$coldisobj += $disobj
